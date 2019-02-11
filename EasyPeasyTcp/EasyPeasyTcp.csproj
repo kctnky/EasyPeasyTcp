@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC9BDE47-CED3-4B78-B28A-EFAC4AF1B173}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyPeasyTcp</RootNamespace>
+    <AssemblyName>EasyPeasyTcp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Abstract\ITcpClient.cs" />
+    <Compile Include="Client\Abstract\ITcpClientConfig.cs" />
+    <Compile Include="Client\Concrete\ConnectedEventArgs.cs" />
+    <Compile Include="Client\Concrete\DisconnectedEventArgs.cs" />
+    <Compile Include="Client\Concrete\ErrorOccuredEventArgs.cs" />
+    <Compile Include="Client\Concrete\MessageReceivedEventArgs.cs" />
+    <Compile Include="Client\Concrete\MessageSentEventArgs.cs" />
+    <Compile Include="Client\Concrete\TcpClient.cs" />
+    <Compile Include="Client\Concrete\TcpClientConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Abstract\IClientHandler.cs" />
+    <Compile Include="Server\Abstract\ITcpServer.cs" />
+    <Compile Include="Server\Abstract\ITcpServerConfig.cs" />
+    <Compile Include="Server\Concrete\ClientConnectedEventArgs.cs" />
+    <Compile Include="Server\Concrete\ClientDisconnectedEventArgs.cs" />
+    <Compile Include="Server\Concrete\ClientErrorOccuredEventArgs.cs" />
+    <Compile Include="Server\Concrete\ClientHandler.cs" />
+    <Compile Include="Server\Concrete\ClientMessageReceivedEventArgs.cs" />
+    <Compile Include="Server\Concrete\ClientMessageSentEventArgs.cs" />
+    <Compile Include="Server\Concrete\ServerErrorOccuredEventArgs.cs" />
+    <Compile Include="Server\Concrete\ServerStartedEventArgs.cs" />
+    <Compile Include="Server\Concrete\ServerStoppedEventArgs.cs" />
+    <Compile Include="Server\Concrete\TcpServer.cs" />
+    <Compile Include="Server\Concrete\TcpServerConfig.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
